@@ -1,0 +1,53 @@
+﻿@model List<Category> 
+
+@if(!Model.Any()) {
+    <div class="alert alert-warning "> No Categories Found  </div>
+}
+else
+{
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="card-title">All Categories </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <table class="table table-striped" role="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px" scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th> Actions </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ( var category in Model  )
+                    {
+                        <tr class="align-middle">
+                            <td>  @category.Id  </td>
+                            <td>  @category.Name </td>
+                            <td>
+                                <a class="btn btn-danger" asp-controller="Categories" asp-action="Delete" asp-route-Id="@category.Id"> 
+                                    Delete
+                                </a>
+                                <a class="btn btn-info" asp-controller="Categories" asp-action="Edit" asp-route-Id="@category.Id">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
+
+
+
+
+}
+
+
+

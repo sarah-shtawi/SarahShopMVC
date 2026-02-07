@@ -25,38 +25,73 @@
                 aria-label="Main navigation"
                 data-accordion="false"
                 id="navigation">
+
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">
+                        <i class="nav-icon bi bi-palette"></i>
+                        <p> Home </p>
+                    </a>
+                </li>
+
+
+               
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
-                            Dashboard
+                            Categories
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
                         <li class="nav-item">
-                            <a href="../index.html" class="nav-link">
+                            <a asp-controller ="Categories" asp-action="Index" class="nav-link">
                                 <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v1</p>
+                                <p>All Categories </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a href="../index2.html" class="nav-link">
+                            <a asp-controller ="Categories" asp-action="Create" class="nav-link">
                                 <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v2</p>
+                                <p>Create Category </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../index3.html" class="nav-link">
-                                <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v3</p>
-                            </a>
-                        </li>
+                        
                     </ul>
                 </li>
-              
-                
-             
+
+
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon bi bi-speedometer"></i>
+                        <p>
+                            Products
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a asp-controller="products" asp-action="Index" class="nav-link">
+                                <i class="nav-icon bi bi-circle"></i>
+                                <p>All Products </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-controller="Products" asp-action="Create" class="nav-link">
+                                <i class="nav-icon bi bi-circle"></i>
+                                <p>Create Product </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
             </ul>
             <!--end::Sidebar Menu-->
         </nav>

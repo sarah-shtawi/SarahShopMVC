@@ -1,0 +1,53 @@
+﻿@model List<Product>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning "> No Products Found  </div>
+}
+else
+{
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="card-title">All Products </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <table class="table table-striped" role="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px" scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th> Image </th>
+                        <th> Category Name  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr class="align-middle">
+                            <td>  @product.Id  </td>
+                            <td>  @product.Name </td>
+                            <td>
+                                <img class="rounded-circle w-25 h-25 " src="/images/@product.Image" />
+                            </td>
+                            <td> 
+                              @product.category.Name    
+                            </td>
+                           
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
+
+
+
+
+}
+
+
+

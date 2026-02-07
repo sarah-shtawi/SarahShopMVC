@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sarah_Shop.Data;
 
 namespace Sarah_Shop.Areas.User.Controllers
 {
@@ -6,9 +7,22 @@ namespace Sarah_Shop.Areas.User.Controllers
 
     public class HomeController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         public IActionResult Index()
         {
-            return View();
+            var categories = context.Categories.ToList();
+
+            return View(categories);
         }
+        public IActionResult AllProducts()
+        {
+            var products = context.Products.ToList();
+            return View(products);
+        }
+
+
+
+
+
     }
 }
