@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sarah_Shop.Models
 {
@@ -20,6 +21,7 @@ namespace Sarah_Shop.Models
 
         public string? Image {  get; set; }
 
+        [ValidateNever]
         public Category category { get; set; }
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
